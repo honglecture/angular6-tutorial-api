@@ -1,0 +1,34 @@
+{
+    "development": {
+      "username": "hong",
+      "password": "1234",
+      "database": "angular",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "operatorsAliases": false,
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "acquire": 30000, 
+        "idle": 10000
+      },
+      "define": {
+        "freezeTableName": true,
+        "timestamps": false
+      }
+    },
+    "test": {
+      "username": "hong",
+      "password": "1234",
+      "database": "angular",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "hong",
+      "password": "1234",
+      "database": "angular",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }
