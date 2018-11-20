@@ -12,7 +12,7 @@ db.Sequelize = Sequelize;
 
 db.Member = require('./member')(sequelize, Sequelize);
 db.Board = require('./board')(sequelize, Sequelize);
-db.Comment = require('./Comment')(sequelize, Sequelize);
+db.Comment = require('./comment')(sequelize, Sequelize);
 
 db.Member.hasMany(db.Board, {foreignKey: 'writer', sourceKey: 'id'});
 db.Board.belongsTo(db.Member, {foreignKey: 'writer', targetKey: 'id'});

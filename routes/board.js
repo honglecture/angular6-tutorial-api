@@ -4,7 +4,7 @@ const { isAuthenticated } = require('../middlewares/auth');
 
 const router = express.Router();
 
-router.get('/:id',  async (req, res, next)=>{
+router.get('/get/:id',  async (req, res, next)=>{
     try {
         const id = req.params.id
         const board = await Board.find({
@@ -20,7 +20,7 @@ router.get('/:id',  async (req, res, next)=>{
 router.get('/list', async (req, res, next)=>{
     try {
         const boardList = await Board.findAll(
-            {order: [['regDate', 'DESC']]}
+            {order: [['id', 'DESC']]}
         );
         res.json(boardList);
     } catch (error) {

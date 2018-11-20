@@ -11,7 +11,7 @@ router.get('/:id', isAuthenticated, async (req, res, next)=>{
     try {
       const member = await Member.find(
         {
-          attributes: ['id', 'nickname', 'email', 'photo', 'regDate'],
+          attributes: ['id', 'nickname', 'email', 'picture', 'regDate'],
           where: {id}
         }
       )
