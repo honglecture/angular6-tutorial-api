@@ -3,6 +3,22 @@ const { Comment } = require('../models');
 
 const router = express.Router();
 
+router.get('/list/:id', async (req, res, next)=>{
+    try {
+        const boardId = req.params.id;
+        const boardList = await Comment.findAll(
+            {
+                where: { boardId },
+                order: [['id', 'DESC']]
+            }
+        );
+        res.json(boardList);
+    } catch (error) {
+        console.error(error);
+        next();
+    }
+});
+
 router.post('/reg', async(req, res, next)=>{
     try {
         const { content, writer, boardId } = req.body;

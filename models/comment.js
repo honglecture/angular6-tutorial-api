@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => (
         },
         regDate:{
             type: DataTypes.DATE,
-            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+            defaultValue: DataTypes.NOW
         },
         boardId: {
             type: DataTypes.BIGINT(20),
